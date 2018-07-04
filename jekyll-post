@@ -2,7 +2,7 @@
 
 if (($# != 1))
 then
-  printf "Usage: %s POSTNAME\n" $0
+  printf "Usage: %s TITLE\n" $0
   exit 1
 fi
 
