@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if (($# != 1))
+then
+  printf "Usage: %s POSTNAME\n" $0
+  exit 1
+fi
+
+
+date=$(date +"%Y-%m-%d")
+
+title=$1
+
+filename=$date"-"$title".md"
+
+if [ -f $filename ]
+then
+  printf "File %s exists already!\n" $filename
+  exit 1
+fi
+
+printf -- "---\nlayout: post\ntitle: \"%s\"\ndate: %s\ncategories: blog\n---\n\n" $start $title $date > $filename
+
+exit 0
